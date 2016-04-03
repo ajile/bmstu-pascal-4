@@ -5,7 +5,7 @@ program main;
 var
   a: integer;
 begin
-  // Координаты точки
-  write('TEST');
+  a := 1;
+  write('TEST', a);
 end.
 
