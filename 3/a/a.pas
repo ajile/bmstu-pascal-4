@@ -2,6 +2,7 @@ program main;
 
 {$mode objfpc}{$H+}
 
+uses b;
 
 function fn1(x: double): double;
 begin
