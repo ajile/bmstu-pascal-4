@@ -6,8 +6,8 @@ uses
  Sysutils;
 
 const
-  FILE_NAME_IN = 'input.txt';
-  FILE_NAME_OUT = 'output.txt';
+  FILE_NAME_IN = '/Users/ajile/Learning/bmstu-pascal-4/12/input.txt';
+  FILE_NAME_OUT = '/Users/ajile/Learning/bmstu-pascal-4/12/output.txt';
 
 var
   input: TextFile;
