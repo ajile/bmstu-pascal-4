@@ -6,12 +6,6 @@
 
 Объект – ящик. Параметры: длина, ширина и высота. Методы: инициализирующий, определения объема и вывода параметров. 
 
-```
-  Desk
-    # square()
-    + width
-    + length
-  Box :: Desc
-    # volume() // square() * depth
-    + depth
-```
+Scheme: https://www.draw.io/#Dinheritance.html
+
+![](http://dl2.joxi.net/drive/2016/04/11/0005/0189/340157/57/67d8632f03.jpg)
