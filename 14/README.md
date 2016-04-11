@@ -6,4 +6,4 @@
 
 Scheme: https://www.draw.io/#Dsimple-object.html
 
-![](http://dl2.joxi.net/drive/2016/04/11/0005/0189/340157/57/8e43bf8ad4.jpg)
+![](http://dl2.joxi.net/drive/2016/04/11/0005/0189/340157/57/ef815a4f97.jpg)

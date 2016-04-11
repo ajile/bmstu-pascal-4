@@ -9,6 +9,6 @@
 * ☁ ✘ Задача 7 - I'm working on the string splitting problem
 * ☁ ✘ Задача 9 - How to do that? I've to do the last part of the task?
 * ☁ ✘ Задача 12
-* ☁ ✘ Задача 14 - have a scheme
-* ☁ ✘ Задача 15 - have a scheme
+* ☂ ✓ Задача 14 - have a scheme
+* ☂ ✓ Задача 15 - have a scheme
 * ⛔ ✘ Задача 16 - have a scheme, have a QUESTION!
