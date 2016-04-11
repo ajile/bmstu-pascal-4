@@ -2,54 +2,56 @@ program main;
 
 {$mode objfpc}{$H+}
 
+const
+  LETTER = 'a';
+
 type
   TStringArray = array of string;
 
-function Explode(Ch: Char; const Text: string): TStringArray;
-var
-  i, k, Len: Integer;
-  Count: Integer;
-begin
-  if Text = '' then
-  begin
-    Result := nil;
-    Exit;
-  end; // if
-  Count := 0;
-  Len := Length(Text);
-  for i := 1 to Len do
-  begin
-    if Text[i] = Ch then Inc(Count);
-  end; // for i
-  SetLength(Result, Count + 1);
-  Count := 0;
-  k := 1;
-  for i := 1 to Len do
-  begin
-    if Text[i] = Ch then
-    begin
-      Result[Count] := Copy(Text, k, i - k);
-      Inc(Count);
-      k := i + 1;
-    end; // if
-  end;
-  Result[Count] := Copy(Text, k, Len - k + 1);
-end;
-
-
 var
   i: integer;
-  posit: integer;
-  text: String = 'Бывший защитник петербургского Зенита Константин Лепёхин поделился впечатлениями от матча второго тура российской Премьер-Лиги котором сине-бело-голубые одержали домашнюю победу над московским ЦСКА счётом прошедшей игре дубль оформил бразильский нападающий Халк';
-  words: TStringArray;
+  counter: integer = 1;
+  text: string = 'we`re having a problem billing your account';
+  sWord: string = '';
+  symbol: char;
+  hasLetter: boolean = false;
+  shift: integer = 0;
 begin
-  words := Explode(' ', text);
 
-  for i:=0 to length(words)-1 do
-  begin
-    posit := Pos(words, 'а');
-    writeLn(posit);
+  // Откликаемся...
+  for i := 1 to length(text) do begin
+
+    symbol := text[i];
+
+    if shift > 0 then begin
+      text[i - shift] := text[i];
+    end;
+
+    // Если символ НЕ попал в диапазон алфавита - значит "слово" закончилось и
+    // мы можем проверить наличие подстроки `LETTER`.
+    if (symbol > #122) or (symbol < #65) then begin
+      if (counter = 3) or (counter = 5) then begin
+        if not(hasLetter) then begin
+          shift := shift + length(sWord) + 1;
+        end;
+      end;
+      sWord := '';
+      hasLetter := false;
+      inc(counter);
+      continue;
+    end;
+
+    if symbol = LETTER then begin
+      hasLetter := true;
+    end;
+
+    sWord := concat(sWord, symbol);
+
+
   end;
+
+  setlength(text, length(text) - shift);
+
 
 end.
 

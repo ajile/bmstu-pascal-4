@@ -15,8 +15,8 @@ var
   input: file of char;
   output: TextFile;
   symbol: char;
-  counter: integer;
-  sWord: string;
+  counter: integer = 0;
+  sWord: string = '';
 begin
 
   // Откликаемся...
@@ -32,9 +32,6 @@ begin
 
   // Открываем файл на запись
   rewrite(output); 
-
-  sWord := '';
-  counter := 0;
 
   // Считываем файл посимвольно. В каждой итерации если проверяем попал ли
   // символ в диапазон алфавита. Если попал, записываем его в специальный массив

@@ -1,6 +1,17 @@
 program main;
 
-{$mode objfpc}{$m+}
+{$mode Delphi}
+
+// TURNING ON DEBUGGING FOR ME (MAC) ONLY
+{$IFDEF Darwin}
+  {$DEFINE DEBUG}
+{$ENDIF}
+
+{$IFDEF DEBUG}
+  {$WARNING This code compiling with log messages}
+{$ENDIF}
+
+uses sysutils, math;
 
 // =============================================================================
 
@@ -10,22 +21,28 @@ program main;
 type
   RealClass = class
   private
-    number: single;
+    number: real;
   public
-    constructor create(n: single);
-    function getFraction(): single;
+    constructor create(n: real);
+    function getFraction(): real;
     function getFractionLength(): integer;
     function getInteger(): integer;
     function getIntegerLength(): integer;
   end;
 
-constructor RealClass.create(n: single);
+constructor RealClass.create(n: real);
   begin
     number := n;
   end;
 
-function RealClass.getFraction() : single;
+function RealClass.getFraction() : real;
   begin
+    // writeln( length(IntToStr(getInteger())) );
+    // writeln( IntToStr(getInteger()) );
+    // writeln( IntToStr(getInteger()) );
+    // writeln(  power(10, length(IntToStr(getInteger())))  );
+    // writeln(  frac(number) * power(10, length(IntToStr(getInteger())))  );
+    // writeln(    );
     result := frac(number);
   end;
 
@@ -41,7 +58,7 @@ function RealClass.getInteger() : integer;
 
 function RealClass.getIntegerLength() : integer;
   begin
-    result := 1;
+    result := length(IntToStr(getInteger()));
   end;
 
 // =============================================================================
@@ -56,18 +73,19 @@ function RealClass.getIntegerLength() : integer;
 
 var
   realNumber: RealClass;
-  numberForTest: single;
+  num: real = 11.22334455;
 begin
 
-  numberForTest := 11.22;
+  {$IFDEF DEBUG}
+    writeln('The number program working on: ', FloatToStr(num));
+    writeln('=========================================');
+  {$ENDIF}
 
-  // Откликаемся...
-  writeln('The number the program working on: ', numberForTest);
-  writeln('=========================================');
+  realNumber := RealClass.create(num);
 
-  realNumber := RealClass.create(numberForTest);
-
-  writeln('The integer part of the number: ', realNumber.getInteger());
-  writeln('The fraction part of the number: ', realNumber.getFraction());
+  {$IFDEF DEBUG}
+    writeln('The integer part of the number: ', realNumber.getInteger());
+    writeln('The fraction part of the number: ', realNumber.getFraction());
+  {$ENDIF}
 
 end.
