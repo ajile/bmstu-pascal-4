@@ -2,85 +2,72 @@ program main;
 
 {$mode objfpc}{$m+}
 
-uses crt, math;
-
 // =============================================================================
 
-const
-  DECIMALS = 10;
-
+// Класс `вещественное число`, записанное с точкой. Параметры – его значение и
+// запись. Методы: конструктор и процедура, определяющая количество цифр в
+// дробной и целой части числа.
 type
-
   RealClass = class
-
   private
-    val: real;
-   
+    number: single;
   public
-    constructor create(n: real);
-    function getFractionLength(): real;
+    constructor create(n: single);
+    function getFraction(): single;
+    function getFractionLength(): integer;
+    function getInteger(): integer;
     function getIntegerLength(): integer;
   end;
 
-constructor RealClass.create(n: real);
+constructor RealClass.create(n: single);
   begin
-    val := n;
+    number := n;
   end;
 
-function RealClass.getFractionLength() : real;
+function RealClass.getFraction() : single;
   begin
-    result := round(frac(val) * math.power(10, DECIMALS));
+    result := frac(number);
+  end;
+
+function RealClass.getFractionLength() : integer;
+  begin
+    result := 1;
+  end;
+
+function RealClass.getInteger() : integer;
+  begin
+    result := trunc(number);
   end;
 
 function RealClass.getIntegerLength() : integer;
   begin
-    result := trunc(val);
+    result := 1;
   end;
 
 // =============================================================================
 
-// type
+// Класс массив вещественных чисел переменной длины. Параметры: количество чисел
+// и массив. Метод определения суммы введенных чисел и отношения количества цифр
+// в целой и дробной частях.
 
-//   RealClassList = class
-
-//   private
-//     height: integer;
-   
-//   public
-//     // constructor createBox(l, w, h: integer);
-//     // function getVolume(): integer;
-//   end;
-
-// // constructor RealClassList.createBox(l, w, h:integer);
-// //   begin
-// //     length:=l;
-// //     width:=w;
-// //     height:=h;
-// //   end;
-
-// // function RealClassList.getVolume() : integer;
-// //   begin
-// //     result := getArea() * height;
-// //   end;
+// @TODO
 
 // =============================================================================
 
 var
   realNumber: RealClass;
-  aNumber: real;
+  numberForTest: single;
 begin
 
-  aNumber := 987.45678;
+  numberForTest := 11.22;
 
   // Откликаемся...
-  writeln('The number we working on: ', aNumber);
+  writeln('The number the program working on: ', numberForTest);
   writeln('=========================================');
 
-  realNumber := RealClass.create(aNumber);
+  realNumber := RealClass.create(numberForTest);
 
-  writeln('The integer part of the number: ', realNumber.getIntegerLength());
-  writeln('The fraction part of the number: ', realNumber.getFractionLength());
-  // box := RealClassList.createBox(10, 20, 30);
-  // writeln('Area of the realNumber: ', realNumber.getArea());
-  // writeln('Volume of the box: ', box.getVolume());
+  writeln('The integer part of the number: ', realNumber.getInteger());
+  writeln('The fraction part of the number: ', realNumber.getFraction());
+
 end.
