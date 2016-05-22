@@ -8,5 +8,6 @@ lib
 *.lpi
 *.o
 *.html
+*.doc#
 
 .DS_Store
