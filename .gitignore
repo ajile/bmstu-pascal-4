@@ -7,7 +7,6 @@ lib
 *.lps
 *.lpi
 *.o
-*.html
 *.doc#
 
 .DS_Store
