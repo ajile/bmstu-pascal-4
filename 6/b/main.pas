@@ -88,7 +88,7 @@ begin
 
   writeln;
 
-  writeln('Total amount of the found elements: ', total);
+  writeln('Total amount of the found elements: ', Total);
   writeln('Amount of the matrix lines contains the element: ', lines);
 
 end.
