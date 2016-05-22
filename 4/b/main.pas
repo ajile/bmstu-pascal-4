@@ -32,7 +32,7 @@ var
 begin
 
   // 9,073415289388
-  sample := 9.0734;
+  sample := 9.073;
   i := 1;
 
   repeat
