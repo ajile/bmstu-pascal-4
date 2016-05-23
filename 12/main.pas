@@ -6,8 +6,8 @@ uses
  Sysutils;
 
 const
-  FILE_NAME_IN = '/Users/ajile/Learning/bmstu-pascal-4/12/input.txt';
-  FILE_NAME_OUT = '/Users/ajile/Learning/bmstu-pascal-4/12/output.txt';
+  FILE_NAME_IN = '/home/ajile/Learning/bmstu-pascal-4/12/input.txt';
+  FILE_NAME_OUT = '/home/ajile/Learning/bmstu-pascal-4/12/output.txt';
   AMOUNT = 3;
   DELIMITER = ';';
 
