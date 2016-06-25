@@ -37,35 +37,4 @@ begin
   	if list[i] <> 0 then writeln(list[i]);
   end;
 
-  // writeln('The incoming list:'); writeln;
-
-  // // Показываем получившуюся матрицу
-  // for i:=1 to length(list) - 1 do begin
-  //   for j:=1 to length(list[i]) do begin
-  //     write(list[i][j], ' ');
-  //   end;
-  //   writeln;
-  // end;
-
-
-  // writeln;
-  // writeln('↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓');
-  // writeln;
-
-
-  // // Показываем отсортированную матрицу
-  // for i:=1 to length(list) - 1 do begin
-
-  //   // Сортируем строку
-  //   bubblesort(list[i]);
-
-  //   // Распечатываем строку
-  //   for j:=1 to length(list[i]) do begin
-  //     write(list[i][j], ' ');
-  //   end;
-
-  //   writeln;
-
-  // end;
-
 end.
